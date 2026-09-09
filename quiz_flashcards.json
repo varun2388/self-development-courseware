@@ -1,0 +1,167 @@
+{
+  "learning_objectives": [
+    "Differentiate psychological and sociological theories of self-development by comparing internal mental focus with external social interaction perspectives.",
+    "Explain the process of moral development, tracing cognitive stages from sensory preconventional thinking to abstract postconventional reasoning and care-oriented ethics.",
+    "Analyze the influence of gender socialization on behavioral expectations, cognitive self-perception, and societal role assignments."
+  ],
+  "flashcards": [
+    {
+      "id": 1,
+      "term": "Self-Development",
+      "category": "General Concepts",
+      "definition": "The process through which an individual constructs a distinct personal and social identity through the continuous negotiation between biological traits and social interaction."
+    },
+    {
+      "id": 2,
+      "term": "Looking Glass Self",
+      "category": "Sociological Perspectives",
+      "definition": "Charles Horton Cooley's concept asserting that people's self-understanding is constructed in part by their perception of how others view and evaluate them."
+    },
+    {
+      "id": 3,
+      "term": "The Self ('I' and 'Me')",
+      "category": "Sociological Perspectives",
+      "definition": "George Herbert Mead's concept of a distinct identity developed through social interaction, requiring individuals to view themselves through the eyes of others."
+    },
+    {
+      "id": 4,
+      "term": "Generalized Other",
+      "category": "Sociological Perspectives",
+      "definition": "The common behavioral expectations, values, and cultural norms of general society that an individual internalizes during the final stage of self-development."
+    },
+    {
+      "id": 5,
+      "term": "Preparatory, Play, and Game Stages",
+      "category": "Sociological Perspectives",
+      "definition": "Mead's developmental sequence: imitation without perspective-taking (preparatory), taking on one role at a time (play), and coordinating multiple simultaneous social roles (game)."
+    },
+    {
+      "id": 6,
+      "term": "Psychosexual vs Psychosocial Stages",
+      "category": "Psychological Perspectives",
+      "definition": "Freud's theory linking self-development to fixations in early psychosexual stages versus Erikson's eight-stage model emphasizing social negotiations across the entire lifespan."
+    },
+    {
+      "id": 7,
+      "term": "Cognitive Constructivism",
+      "category": "Psychological Perspectives",
+      "definition": "Jean Piaget's model proposing that self-development evolves through a negotiation between mental representations in the mind and socially experienced reality."
+    },
+    {
+      "id": 8,
+      "term": "Social Attachment & Maternal Deprivation",
+      "category": "Psychological Perspectives",
+      "definition": "Harry Harlow's experimental finding with rhesus monkeys showing that contact comfort and social relationships are essential for normal emotional and behavioral development."
+    },
+    {
+      "id": 9,
+      "term": "Sociology vs Psychology Focus",
+      "category": "General Concepts",
+      "definition": "Psychology examines inward mental processing and emotional health; sociology examines outward social institutions, cultural norms, and patterns of social interaction."
+    },
+    {
+      "id": 10,
+      "term": "Kohlberg's Levels of Moral Development",
+      "category": "Moral Development",
+      "definition": "A three-level framework progressing from sensory preconventional thinking (punishment/reward) to societal conventional reasoning (rules/empathy) to abstract postconventional ethics (universal human rights)."
+    },
+    {
+      "id": 11,
+      "term": "Justice Perspective vs Care Perspective",
+      "category": "Moral Development & Gender",
+      "definition": "Carol Gilligan's distinction between a male-socialized emphasis on rules, laws, and abstract justice versus a female-socialized focus on interpersonal care, relationships, and situational context."
+    },
+    {
+      "id": 12,
+      "term": "Gender Socialization",
+      "category": "Gender Socialization",
+      "definition": "The societal process by which expectations regarding behavior, attire, toys, and roles are reinforced based on sex, shaping individual self-concept from early childhood."
+    }
+  ],
+  "quiz": [
+    {
+      "id": 1,
+      "question": "How does the fundamental approach of sociology differ from that of psychology when studying human behavior?",
+      "options": [
+        "Psychology focuses on genetic determinism, while sociology focuses exclusively on animal behavior models.",
+        "Psychology looks inward at mental processes and emotional health, whereas sociology looks outward at social institutions and cultural patterns.",
+        "Sociology examines individual brain chemistry, while psychology studies large-scale economic systems.",
+        "Psychology studies adult behavior only, while sociology focuses exclusively on childhood socialization."
+      ],
+      "answer_index": 1,
+      "explanation": "Psychology focuses on internal mental development and emotional processing, while sociology examines external societal influences, cultural norms, and structural patterns."
+    },
+    {
+      "id": 2,
+      "question": "According to George Herbert Mead, what capability distinguishes the 'game stage' from the earlier 'play stage' in childhood socialization?",
+      "options": [
+        "Children can only imitate actions without understanding perspective.",
+        "Children understand abstract postconventional ethics and societal law.",
+        "Children learn to consider several roles simultaneously and understand how those roles interact.",
+        "Children develop a strong preference for gender-neutral play environments."
+      ],
+      "answer_index": 2,
+      "explanation": "In the game stage, children learn to coordinate multiple roles at once (e.g., understanding the distinct responsibilities of restaurant staff working together)."
+    },
+    {
+      "id": 3,
+      "question": "What key realization characterizes Lawrence Kohlberg's 'postconventional' stage of moral development?",
+      "options": [
+        "Morality is judged solely by direct sensory experiences and physical consequences.",
+        "Morality is determined by strict adherence to legal codes and social rules.",
+        "Morality is viewed in abstract terms, recognizing that legality and morality do not always align.",
+        "Morality is guided primarily by gender-neutral toys and early childhood play."
+      ],
+      "answer_index": 2,
+      "explanation": "At the postconventional level, individuals evaluate morality using abstract ethical principles (e.g., human rights) and recognize that legal laws may sometimes be morally unjust."
+    },
+    {
+      "id": 4,
+      "question": "What was Carol Gilligan's main critique of Lawrence Kohlberg's research on moral development?",
+      "options": [
+        "Kohlberg failed to include young children in his research sample.",
+        "Kohlberg's sample consisted only of male subjects, potentially introducing gender bias favoring a justice perspective.",
+        "Kohlberg relied too heavily on Harry Harlow's maternal deprivation experiments with rhesus monkeys.",
+        "Kohlberg assumed that moral development was completely finished by age six."
+      ],
+      "answer_index": 1,
+      "explanation": "Gilligan noted that Kohlberg tested only male subjects and treated their justice/rule orientation as superior, overlooking female socialization toward care and responsibility."
+    },
+    {
+      "id": 5,
+      "question": "Harry Harlow's research with infant rhesus monkeys demonstrated that emotional attachment and healthy self-development primarily rely on:",
+      "options": [
+        "Caloric intake provided by wire surrogate mothers.",
+        "Complete social isolation during early infant development.",
+        "Contact comfort and social interaction rather than mere food provision.",
+        "Strict enforcement of rule-based behavioral discipline."
+      ],
+      "answer_index": 2,
+      "explanation": "Harlow showed that infant monkeys sought comfort and attachment from soft cloth surrogate mothers over wire mothers supplying milk, proving the essential role of social contact comfort."
+    },
+    {
+      "id": 6,
+      "question": "Charles Horton Cooley's concept of the 'looking glass self' posits that an individual's self-concept is formed by:",
+      "options": [
+        "Innate genetic predispositions present at birth.",
+        "Their perception of how others view and judge them.",
+        "Their performance on standardized cognitive assessments.",
+        "Biological maturation through Freud's psychosexual stages."
+      ],
+      "answer_index": 1,
+      "explanation": "The looking glass self describes how individuals build self-understanding by imagining how they appear to others and interpreting others' reactions."
+    },
+    {
+      "id": 7,
+      "question": "How do modern sociologists explain the behavioral differences between males and females observed in studies like Gilligan's?",
+      "options": [
+        "They are biological imperatives hardwired at birth.",
+        "They result from gender socialization, which teaches societal norms and expectations based on sex.",
+        "They are solely caused by cognitive developmental delays in preconventional moral reasoning.",
+        "They reflect permanent psychosexual fixations formed during infancy."
+      ],
+      "answer_index": 1,
+      "explanation": "Sociologists attribute observed behavioral differences to gender socialization—the societal process of reinforcing distinct norms, roles, and expectations based on gender."
+    }
+  ]
+}
