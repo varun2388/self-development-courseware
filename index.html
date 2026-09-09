@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theories of Self-Development — Courseware Package</title>
+  <style>
+    /* CSS RESET & VARIABLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-dark: #1e293b;
+      --accent: #0d9488;
+      --accent-light: #f0fdfa;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --success: #10b981;
+      --danger: #ef4444;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+      --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER & NAVIGATION */
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 1.5rem 2rem 0 2rem;
+      box-shadow: var(--shadow-md);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .header-title-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-badge {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    /* NAV TABS */
+    nav.nav-tabs {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+    }
+    nav.nav-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: #ffffff;
+    }
+
+    .tab-btn.active {
+      color: #ffffff;
+      border-bottom-color: #38bdf8;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px 6px 0 0;
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CARD STYLING */
+    .content-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--primary-dark);
+      font-family: var(--font-heading);
+    }
+
+    h1.page-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2.section-title {
+      font-size: 1.4rem;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--primary);
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #334155;
+      font-size: 1.05rem;
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background-color: #eff6ff;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .callout p, .callout ul {
+      margin-bottom: 0;
+    }
+
+    /* TABLE STYLES */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-input {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    /* FLASHCARD COMPONENT */
+    .flashcard-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 650px;
+      margin: 2rem auto;
+    }
+
+    .card-controls-top {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+
+    .category-tag {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .card-counter {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .flashcard-wrapper {
+      perspective: 1000px;
+      width: 100%;
+      height: 320px;
+      cursor: pointer;
+    }
+
+    .flashcard {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1px solid var(--border-color);
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+      color: var(--primary-dark);
+    }
+
+    .card-front h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-hint {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%);
+      color: #ffffff;
+      transform: rotateY(180deg);
+    }
+
+    .card-back p {
+      color: #f1f5f9;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-light);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background-color: #e2e8f0;
+      color: #334155;
+    }
+
+    .btn-secondary:hover {
+      background-color: #cbd5e1;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* QUIZ COMPONENT */
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .quiz-progress-bar {
+      width: 100%;
+      height: 8px;
+      background-color: #e2e8f0;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      background-color: var(--accent);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-question-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .question-number {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .question-text {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .option-btn {
+      text-align: left;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--border-color);
+      background-color: #ffffff;
+      color: var(--text-main);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-light);
+      background-color: #f0f6ff;
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary-light);
+      background-color: #eff6ff;
+    }
+
+    .option-btn.correct {
+      border-color: var(--success);
+      background-color: #ecfdf5;
+      color: #065f46;
+      font-weight: 600;
+    }
+
+    .option-btn.incorrect {
+      border-color: var(--danger);
+      background-color: #fef2f2;
+      color: #991b1b;
+    }
+
+    .explanation-box {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .explanation-box.correct-bg {
+      background-color: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .explanation-box.incorrect-bg {
+      background-color: #fef2f2;
+      border-color: #fecaca;
+    }
+
+    .quiz-results-card {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+    }
+
+    .score-badge {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 1rem 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    /* ACCORDION / ESSAYS */
+    .essay-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .essay-prompt {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .model-answer-toggle {
+      background: none;
+      border: none;
+      color: var(--primary-light);
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .model-answer-content {
+      display: none;
+      background-color: #ecfdf5;
+      border-left: 4px solid #10b981;
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 0.5rem;
+    }
+
+    .model-answer-content.show {
+      display: block;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .header-title-area {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .content-card {
+        padding: 1.5rem;
+      }
+      .flashcard-wrapper {
+        height: 360px;
+      }
+      .card-face {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="header-title-area">
+        <div>
+          <div class="brand-title">Theories of Self-Development</div>
+          <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 0.2rem;">Semester 3 Sociology & Psychology Courseware</div>
+        </div>
+        <span class="brand-badge">Standalone Offline Package</span>
+      </div>
+
+      <nav class="nav-tabs" role="tablist">
+        <button class="tab-btn active" data-tab="reading" role="tab" aria-selected="true">Textbook Reading</button>
+        <button class="tab-btn" data-tab="study-guide" role="tab" aria-selected="false">Study Guide & Matrix</button>
+        <button class="tab-btn" data-tab="flashcards" role="tab" aria-selected="false">Interactive Flashcards</button>
+        <button class="tab-btn" data-tab="quiz" role="tab" aria-selected="false">Self-Scoring Quiz</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- TAB 1: TEXTBOOK READING -->
+    <section id="reading" class="tab-panel active" role="tabpanel">
+      <div class="content-card">
+        <h1 class="page-title">Theories of Self-Development</h1>
+        <div class="page-subtitle">Core Concepts in Psychological and Sociological Socialization</div>
+
+        <div class="callout">
+          <div class="callout-title">Learning Objectives</div>
+          <ul>
+            <li><strong>Differentiate</strong> psychological and sociological theories of self-development.</li>
+            <li><strong>Explain</strong> the process of moral development.</li>
+            <li><strong>Analyze</strong> the influence of gender socialization on behavioral expectations.</li>
+          </ul>
+        </div>
+
+        <p>When we are born, we have a genetic makeup and biological traits. However, who we are as human beings develops through social interaction. Many scholars, both in the fields of psychology and in sociology, have described the process of self-development as a precursor to understanding how that "self" becomes socialized.</p>
+
+        <h2 class="section-title">Psychological Perspectives on Self-Development</h2>
+        <p>Psychoanalyst <strong>Sigmund Freud (1856–1939)</strong> was one of the most influential modern scientists to put forth a theory about how people develop a sense of self. He divided the maturation process into stages, and posited that people's self-development is closely linked to their early stages of development. According to Freud, failure to properly engage in or disengage from a specific stage results in emotional and psychological consequences throughout adulthood.</p>
+
+        <p>Psychologist <strong>Erik Erikson (1902–1994)</strong> created a theory of personality development based, in part, on the work of Freud. However, Erikson believed the personality continued to change over time and was never truly finished. His theory includes eight stages of development, beginning with birth and ending with death. According to Erikson, people move through these stages throughout their lives. In contrast to Freud's focus on psychosexual stages and basic human urges, Erikson's view of self-development gave credit to more social aspects, like the way we negotiate between our own base desires and what is socially accepted (Erikson 1982).</p>
+
+        <p><strong>Jean Piaget (1896–1980)</strong> was a psychologist who focused on the role of social interactions in child development. He recognized that the development of self evolved through a negotiation between the world as it exists in one's mind and the world that exists as it is experienced socially (Piaget 1954). All three of these thinkers have contributed to our modern understanding of self-development.</p>
+
+        <p>Psychologist <strong>Harry Harlow (1905–1981)</strong> is known for studying the role of social relationships in human development by observing the impact of isolation and maternal deprivation on the development of young rhesus monkeys. Harlow found that the monkeys, when subjected to isolation, exhibited disturbed behaviors and had a difficult time integrating when reconnected with other monkeys. Harlow also introduced isolated monkeys to simulated surrogate mothers, some covered in cloth and others constructed out of wire. Based on observed behaviors, the young monkeys appeared to develop attachment with the cloth mothers and lean on them for emotional support. More than seven decades later, this experiment continues to inform the research of psychologists, sociologists, and those interested in human development.</p>
+
+        <h2 class="section-title">Sociology or Psychology: What's the Difference?</h2>
+        <p>While both disciplines are interested in human behavior, psychologists are focused on how the mind influences that behavior, while sociologists study the role of society in shaping behavior. Psychologists are interested in people's mental development and how their minds process their world. Sociologists are more likely to focus on how different aspects of society contribute to an individual's relationship with their world. Another way to think of the difference is that psychologists tend to look inward (mental health, emotional processes), while sociologists tend to look outward (social institutions, cultural norms, interactions with others).</p>
+
+        <p><strong>Émile Durkheim (1858–1917)</strong> was the first to make this distinction in research, when he attributed differences in suicide rates among people to social causes (religious differences) rather than to psychological causes (Durkheim 1897). For example, a sociologist studying how a couple gets to the point of their first kiss on a date might focus on cultural norms for dating or social patterns over time; a psychologist would more likely be interested in the person's mental processing of desire. In recent decades the fields have become more clearly separated as sociologists increasingly focus on large societal issues and patterns, while psychologists remain honed in on the human mind. Both disciplines make valuable contributions through different approaches.</p>
+
+        <h2 class="section-title">Sociological Theories of Self-Development</h2>
+        <p>One of the pioneering contributors to sociological perspectives was <strong>Charles Horton Cooley (1864–1929)</strong>. He asserted that people's self-understanding is constructed, in part, by their perception of how others view them — a process termed <em>"the looking glass self"</em> (Cooley 1902).</p>
+
+        <p>Later, <strong>George Herbert Mead (1863–1931)</strong> studied the self, a person's distinct identity that is developed through social interaction. In order to engage in this process of "self," an individual has to be able to view themselves through the eyes of others. That is not an ability we are born with (Mead 1934). Through socialization we learn to put ourselves in someone else's shoes and look at the world through their perspective. This assists us in becoming self-aware.</p>
+
+        <p>Mead believed there is a specific path of development that all people go through:</p>
+        <ul>
+          <li><strong>Preparatory stage:</strong> Children are only capable of imitation; they have no ability to imagine how others see things, and they copy the actions of people with whom they regularly interact, such as their caregivers.</li>
+          <li><strong>Play stage:</strong> Children begin to take on the role that one other person might have — trying on a parent's point of view by playing dress-up or talking on a toy telephone.</li>
+          <li><strong>Game stage:</strong> Children learn to consider several roles at the same time and how those roles interact; a child at this stage is likely to be aware of the different responsibilities of people in a restaurant who together make for a smooth dining experience.</li>
+          <li><strong>Generalized other:</strong> Children develop, understand, and learn the common behavioral expectations of general society; by this stage an individual can imagine how they are viewed by one or many others, and thus, sociologically, has a "self" (Mead 1934; Mead 1964).</li>
+        </ul>
+
+        <h2 class="section-title">Kohlberg's Theory of Moral Development</h2>
+        <p>Moral development is an important part of the socialization process. The term refers to the way people learn what society considers to be "good" and "bad," which is important for a smoothly functioning society. Moral development prevents people from acting on unchecked urges, instead considering what is right for society and good for others. <strong>Lawrence Kohlberg (1927–1987)</strong> developed a theory of moral development with three levels:</p>
+
+        <ul>
+          <li><strong>Preconventional level:</strong> Young children, who lack a higher level of cognitive ability, experience the world around them only through their senses.</li>
+          <li><strong>Conventional level:</strong> Developing in the teen years, when youngsters become increasingly aware of others' feelings and take those into consideration when determining what is "good" and "bad."</li>
+          <li><strong>Postconventional level:</strong> People begin to think of morality in abstract terms, such as the belief that everyone has the right to life, liberty, and the pursuit of happiness; at this stage people also recognize that legality and morality do not always match up evenly (Kohlberg 1981).</li>
+        </ul>
+
+        <p>When hundreds of thousands of Egyptians turned out in 2011 to protest government corruption, they were using postconventional morality: they understood that although their government was legal, it was not morally correct.</p>
+
+        <h2 class="section-title">Gilligan's Theory of Moral Development and Gender</h2>
+        <p><strong>Carol Gilligan (1936–)</strong> recognized that Kohlberg's theory might show gender bias since his research was only conducted on male subjects. Gilligan's research suggested that boys and girls have different understandings of morality. Boys appeared to have a <em>justice perspective</em>, placing emphasis on rules and laws. Girls seemed to have a <em>care and responsibility perspective</em>, considering people's reasons behind behavior that seems morally wrong.</p>
+
+        <p>While Gilligan is correct that Kohlberg's research should have included both male and female subjects, her study has been scientifically discredited due to its small sample size, and the results have not been replicated by subsequent researchers. The differences Gilligan observed were not an issue of the development of morality, but an issue of socialization. Differences in behavior between males and females are the result of gender socialization, which teaches boys and girls societal norms and behaviors expected of them based on their sex.</p>
+
+        <p>Gilligan also recognized that Kohlberg's theory rested on the assumption that the justice perspective was the better perspective. Gilligan theorized that neither perspective was "better": the two norms served different purposes. She explained that boys are socialized for a work environment where rules make operations run smoothly, while girls are socialized for a home environment where flexibility allows for harmony in caretaking and nurturing (Gilligan 1982; Gilligan 1990).</p>
+
+        <h2 class="section-title">Gender Socialization in Everyday Life</h2>
+        <p><strong>Lisa Bloom</strong>, author of <em>Think: Straight Talk for Women to Stay Smart in a Dumbed Down World</em>, asserts that we are too focused on the appearance of young girls, and as a result our society is socializing them to believe that how they look is of vital importance. She cites as one example that about 50 percent of girls ages three to six worry about being fat (Bloom 2011). Sociologists are acutely interested in this type of gender socialization, by which societal expectations of how boys and girls should behave, what toys and colors they should like, and how important their attire is, are reinforced.</p>
+
+        <p>One response is being experimented with at the Egalia preschool in Sweden, where children develop in a gender-neutral environment: all children are referred to with neutral terms like "friend," and play areas and toys are consciously set up to eliminate reinforcement of gender expectations (Haney 2011). Bloom suggests a middle ground — simple steps like asking a young girl about her favorite book or what she likes: engage with her mind, not her outward appearance (Bloom 2011).</p>
+      </div>
+    </section>
+
+    <!-- TAB 2: STUDY GUIDE & COMPARATIVE MATRIX -->
+    <section id="study-guide" class="tab-panel" role="tabpanel">
+      <div class="content-card">
+        <h1 class="page-title">Study Guide & Comparative Theorist Matrix</h1>
+        <div class="page-subtitle">Academic Synthesis & Model Analytical Answers</div>
+
+        <h2 class="section-title">Section Summaries</h2>
+        <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 2rem;">
+          <div style="background: #f8fafc; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Psychological Foundations</h3>
+            <p style="font-size: 0.95rem; margin: 0;">Focuses on internal mental development. Freud emphasized psychosexual fixations; Erikson expanded development across 8 lifelong psychosocial stages; Piaget highlighted cognitive schemas; Harlow proved social contact comfort is essential for normal attachment.</p>
+          </div>
+
+          <div style="background: #f8fafc; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">2. Sociological Foundations</h3>
+            <p style="font-size: 0.95rem; margin: 0;">Focuses on outward social institutions and interaction. Durkheim established empirical social facts; Cooley created the 'looking glass self'; Mead outlined the development of the 'self' through Preparatory, Play, and Game stages to the Generalized Other.</p>
+          </div>
+
+          <div style="background: #f8fafc; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">3. Moral & Gender Socialization</h3>
+            <p style="font-size: 0.95rem; margin: 0;">Kohlberg traced moral stages from preconventional to postconventional ethics. Gilligan identified care vs. justice perspectives. Modern sociologists prove gender differences stem from socialization, reinforced by media (Bloom) and neutralized in experiments like Egalia.</p>
+          </div>
+        </div>
+
+        <h2 class="section-title">Comparative Theorist Matrix</h2>
+        <div class="filter-bar">
+          <input type="text" id="matrixSearch" class="filter-input" placeholder="Search theorist, discipline, or keyword...">
+        </div>
+
+        <div class="table-container">
+          <table id="theoristTable">
+            <thead>
+              <tr>
+                <th>Theorist</th>
+                <th>Discipline</th>
+                <th>Key Concept / Theory</th>
+                <th>Core Mechanism / Focus</th>
+                <th>Major Contribution / Critique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sigmund Freud</strong> (1856–1939)</td>
+                <td>Psychoanalysis</td>
+                <td>Psychosexual Stages</td>
+                <td>Early childhood fixations & subconscious urges</td>
+                <td>Pioneered developmental stages; overemphasized biological urges over social interaction.</td>
+              </tr>
+              <tr>
+                <td><strong>Erik Erikson</strong> (1902–1994)</td>
+                <td>Psychology</td>
+                <td>Psychosocial Lifespan Stages</td>
+                <td>8 stages negotiating base desires vs. social norms</td>
+                <td>Extended self-development across the entire lifespan from birth to death.</td>
+              </tr>
+              <tr>
+                <td><strong>Jean Piaget</strong> (1896–1980)</td>
+                <td>Psychology</td>
+                <td>Cognitive Constructivism</td>
+                <td>Negotiation between mind schemas & social experience</td>
+                <td>Highlighted cognitive development through active environmental interaction.</td>
+              </tr>
+              <tr>
+                <td><strong>Harry Harlow</strong> (1905–1981)</td>
+                <td>Psychology</td>
+                <td>Social Attachment & Deprivation</td>
+                <td>Isolation experiments with infant rhesus monkeys</td>
+                <td>Proved social contact comfort and relationships are vital for normal development.</td>
+              </tr>
+              <tr>
+                <td><strong>Émile Durkheim</strong> (1858–1917)</td>
+                <td>Sociology</td>
+                <td>Social Facts & Anomie</td>
+                <td>Empirical study attributing suicide rates to social integration</td>
+                <td>Established sociology as a distinct discipline looking outward at social structures.</td>
+              </tr>
+              <tr>
+                <td><strong>Charles H. Cooley</strong> (1864–1929)</td>
+                <td>Sociology</td>
+                <td>Looking Glass Self</td>
+                <td>Self-concept built via perceived evaluation by others</td>
+                <td>Demonstrated that individual identity is fundamentally social and reflective.</td>
+              </tr>
+              <tr>
+                <td><strong>George H. Mead</strong> (1863–1931)</td>
+                <td>Sociology</td>
+                <td>Symbolic Interactionism & 'Self'</td>
+                <td>Preparatory, Play, Game stages & Generalized Other</td>
+                <td>Detailed how perspective-taking constructs the self via social interaction.</td>
+              </tr>
+              <tr>
+                <td><strong>Lawrence Kohlberg</strong> (1927–1987)</td>
+                <td>Psychology / Ethics</td>
+                <td>Moral Development Levels</td>
+                <td>Preconventional, Conventional, Postconventional levels</td>
+                <td>Formulated stage-model of morality; criticized for male-only research sample.</td>
+              </tr>
+              <tr>
+                <td><strong>Carol Gilligan</strong> (1936–)</td>
+                <td>Psychology / Gender</td>
+                <td>Care vs. Justice Perspective</td>
+                <td>Gendered orientations: Justice (rules) vs. Care (relationships)</td>
+                <td>Exposed gender bias; differences attributed to gender socialization rather than innate moral stages.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="section-title">Review Essay Prompts & Model Answers</h2>
+
+        <div class="essay-card">
+          <div class="essay-prompt">Essay Prompt 1: Psychological vs. Sociological Paradigms of the Self</div>
+          <p style="font-size: 0.95rem; color: #475569;">Compare and contrast how psychological perspectives (e.g., Freud, Erikson) and sociological perspectives (e.g., Cooley, Mead) conceptualize the emergence of the self. How do their analytical scopes differ?</p>
+          <button class="model-answer-toggle" onclick="toggleAnswer(this)">
+            <span>Show Model Answer</span> &#9660;
+          </button>
+          <div class="model-answer-content">
+            <p><strong>Model Answer:</strong></p>
+
+            <p>Psychology and sociology offer complementary yet distinct frameworks for understanding self-development. Psychological paradigms primarily adopt an "inward" analytical scope. Sigmund Freud posited that self-development is governed by internal psychosexual drives and early childhood resolution of subconscious conflicts. Erik Erikson expanded Freud's model into a lifelong psychosocial framework, arguing that individuals navigate eight developmental crises between internal desires and societal constraints. While Erikson incorporated social context, his primary unit of analysis remained internal ego development.</p>
+
+            <p>Conversely, sociological paradigms adopt an "outward" perspective, asserting that the self is an inherently social product generated through symbolic interaction. Charles Horton Cooley introduced the "looking glass self," demonstrating that individual identity is constructed via our subjective interpretation of how others perceive and judge us. George Herbert Mead built upon this by outlining a sequential process of socialization (preparatory, play, and game stages). For Mead, the self emerges only when an individual learns perspective-taking and internalizes the "generalized other"—the collective norms of society.</p>
+
+            <p>In summary, while psychology examines internal mental development, emotional health, and cognitive schemas, sociology analyzes social structures, interpersonal interactions, and cultural expectations. As Émile Durkheim established, sociological phenomena cannot be reduced to individual psychology; rather, the self is continually forged within a social matrix.</p>
+          </div>
+        </div>
+
+        <div class="essay-card">
+          <div class="essay-prompt">Essay Prompt 2: The Evolution of Moral Reasoning and Postconventional Action</div>
+          <p style="font-size: 0.95rem; color: #475569;">Detail Lawrence Kohlberg's three levels of moral development. Using a historical or contemporary example, explain what distinguishes postconventional moral reasoning from conventional moral reasoning.</p>
+          <button class="model-answer-toggle" onclick="toggleAnswer(this)">
+            <span>Show Model Answer</span> &#9660;
+          </button>
+          <div class="model-answer-content">
+            <p><strong>Model Answer:</strong></p>
+
+            <p>Lawrence Kohlberg conceptualized moral development as a cognitive progression through three distinct levels:</p>
+
+            <ul>
+              <li><strong>Preconventional Level:</strong> Prevalent in young children, moral judgment is egocentric and determined entirely by sensory outcomes—obeying rules to avoid punishment or seek immediate rewards.</li>
+              <li><strong>Conventional Level:</strong> Emerging during adolescence, individuals internalize societal rules and laws, evaluating right and wrong based on social approval, authority, and maintaining social order.</li>
+              <li><strong>Postconventional Level:</strong> Individuals evaluate morality through abstract ethical principles (e.g., universal human rights, justice, equality), recognizing that positive law and moral justice are not always congruent.</li>
+            </ul>
+
+            <p>A clear illustration of postconventional morality occurred during the 2011 Egyptian Arab Spring demonstrations. Hundreds of thousands of citizens gathered in Tahrir Square to protest government corruption and authoritarian rule. At a conventional level, protesting violated state law and disrupted public order. However, the protesters operated at a postconventional level: they recognized that although the authoritarian regime was legally constituted, its oppression breached fundamental human rights. Postconventional thinkers evaluate laws against higher universal ethical principles, demonstrating that morality transcends legal obedience.</p>
+          </div>
+        </div>
+
+        <div class="essay-card">
+          <div class="essay-prompt">Essay Prompt 3: Gender Socialization, Moral Ethics, and Behavioral Expectations</div>
+          <p style="font-size: 0.95rem; color: #475569;">Critically analyze Carol Gilligan's critique of Kohlberg's moral development theory. How do modern sociologists explain observed gender differences in moral and behavioral orientations?</p>
+          <button class="model-answer-toggle" onclick="toggleAnswer(this)">
+            <span>Show Model Answer</span> &#9660;
+          </button>
+          <div class="model-answer-content">
+            <p><strong>Model Answer:</strong></p>
+
+            <p>Carol Gilligan critiqued Lawrence Kohlberg's moral development theory on methodological and conceptual grounds. Kohlberg's empirical research relied exclusively on male subjects, yet he generalized his findings as a universal model of human moral development. Gilligan argued that this male-centric model favored a "justice perspective"—focused on rules, formal rights, and abstract law—while penalizing women, who frequently exhibited a "care perspective" emphasizing interpersonal relationships, empathy, and situational context.</p>
+
+            <p>However, subsequent empirical studies failed to replicate Gilligan's claims of innate gendered moral differences, and her research was criticized for small sample size. Modern sociologists emphasize that the differences Gilligan observed were not biological or inherent stages of moral development, but direct outcomes of gender socialization. From early childhood, societal institutions socialize boys for public/competitive domains where formal rules predominate, while socializing girls for domestic/nurturing domains where interpersonal harmony is emphasized.</p>
+
+            <p>As sociologists like Lisa Bloom demonstrate, everyday messaging constantly reinforces gendered expectations—such as focusing on girls' outward appearance rather than intellectual capabilities. Institutional interventions, such as Sweden's Egalia preschool, demonstrate that when gendered expectations are actively dismantled, behavioral differences minimize. Thus, observed gender variations in moral and social conduct are culturally constructed through lifelong socialization rather than hardwired psychological differences.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 3: FLASHCARDS -->
+    <section id="flashcards" class="tab-panel" role="tabpanel">
+      <div class="content-card">
+        <h1 class="page-title">Key Term Flashcards</h1>
+        <div class="page-subtitle">Test and reinforce core theoretical terminology through interactive study cards</div>
+
+        <div class="flashcard-container">
+          <div class="card-controls-top">
+            <span class="category-tag" id="flashCategory">Category</span>
+            <span class="card-counter" id="flashCounter">Card 1 of 12</span>
+          </div>
+
+          <div class="flashcard-wrapper" onclick="flipFlashcard()">
+            <div class="flashcard" id="flashcardElement">
+              <div class="card-face card-front">
+                <h3 id="flashTerm">Term</h3>
+                <div class="card-hint">Click card or press Space to flip</div>
+              </div>
+              <div class="card-face card-back">
+                <p id="flashDefinition">Definition</p>
+                <div class="card-hint" style="color: #94a3b8;">Click card to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-secondary" onclick="prevFlashcard()">&#8592; Previous</button>
+            <button class="btn btn-primary" onclick="flipFlashcard()">Flip Card</button>
+            <button class="btn btn-secondary" onclick="nextFlashcard()">Next &#8594;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: QUIZ -->
+    <section id="quiz" class="tab-panel" role="tabpanel">
+      <div class="content-card">
+        <h1 class="page-title">Interactive Self-Scoring Quiz</h1>
+        <div class="page-subtitle">Evaluate your mastery of key psychological and sociological concepts</div>
+
+        <div class="quiz-container">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quizProgressFill"></div>
+          </div>
+
+          <div id="quizContent">
+            <!-- Dynamic Quiz Content Rendered via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; Semester 3 Sociology & Psychology Courseware Package | Self-Contained Standalone Web App</p>
+  </footer>
+
+  <!-- EMBEDDED DATA & JAVASCRIPT -->
+  <script>
+    // EMBEDDED DATA FROM quiz_flashcards.json
+    const coursewareData = {
+      "learning_objectives": [
+        "Differentiate psychological and sociological theories of self-development by comparing internal mental focus with external social interaction perspectives.",
+        "Explain the process of moral development, tracing cognitive stages from sensory preconventional thinking to abstract postconventional reasoning and care-oriented ethics.",
+        "Analyze the influence of gender socialization on behavioral expectations, cognitive self-perception, and societal role assignments."
+      ],
+      "flashcards": [
+        {
+          "id": 1,
+          "term": "Self-Development",
+          "category": "General Concepts",
+          "definition": "The process through which an individual constructs a distinct personal and social identity through the continuous negotiation between biological traits and social interaction."
+        },
+        {
+          "id": 2,
+          "term": "Looking Glass Self",
+          "category": "Sociological Perspectives",
+          "definition": "Charles Horton Cooley's concept asserting that people's self-understanding is constructed in part by their perception of how others view and evaluate them."
+        },
+        {
+          "id": 3,
+          "term": "The Self ('I' and 'Me')",
+          "category": "Sociological Perspectives",
+          "definition": "George Herbert Mead's concept of a distinct identity developed through social interaction, requiring individuals to view themselves through the eyes of others."
+        },
+        {
+          "id": 4,
+          "term": "Generalized Other",
+          "category": "Sociological Perspectives",
+          "definition": "The common behavioral expectations, values, and cultural norms of general society that an individual internalizes during the final stage of self-development."
+        },
+        {
+          "id": 5,
+          "term": "Preparatory, Play, and Game Stages",
+          "category": "Sociological Perspectives",
+          "definition": "Mead's developmental sequence: imitation without perspective-taking (preparatory), taking on one role at a time (play), and coordinating multiple simultaneous social roles (game)."
+        },
+        {
+          "id": 6,
+          "term": "Psychosexual vs Psychosocial Stages",
+          "category": "Psychological Perspectives",
+          "definition": "Freud's theory linking self-development to fixations in early psychosexual stages versus Erikson's eight-stage model emphasizing social negotiations across the entire lifespan."
+        },
+        {
+          "id": 7,
+          "term": "Cognitive Constructivism",
+          "category": "Psychological Perspectives",
+          "definition": "Jean Piaget's model proposing that self-development evolves through a negotiation between mental representations in the mind and socially experienced reality."
+        },
+        {
+          "id": 8,
+          "term": "Social Attachment & Maternal Deprivation",
+          "category": "Psychological Perspectives",
+          "definition": "Harry Harlow's experimental finding with rhesus monkeys showing that contact comfort and social relationships are essential for normal emotional and behavioral development."
+        },
+        {
+          "id": 9,
+          "term": "Sociology vs Psychology Focus",
+          "category": "General Concepts",
+          "definition": "Psychology examines inward mental processing and emotional health; sociology examines outward social institutions, cultural norms, and patterns of social interaction."
+        },
+        {
+          "id": 10,
+          "term": "Kohlberg's Levels of Moral Development",
+          "category": "Moral Development",
+          "definition": "A three-level framework progressing from sensory preconventional thinking (punishment/reward) to societal conventional reasoning (rules/empathy) to abstract postconventional ethics (universal human rights)."
+        },
+        {
+          "id": 11,
+          "term": "Justice Perspective vs Care Perspective",
+          "category": "Moral Development & Gender",
+          "definition": "Carol Gilligan's distinction between a male-socialized emphasis on rules, laws, and abstract justice versus a female-socialized focus on interpersonal care, relationships, and situational context."
+        },
+        {
+          "id": 12,
+          "term": "Gender Socialization",
+          "category": "Gender Socialization",
+          "definition": "The societal process by which expectations regarding behavior, attire, toys, and roles are reinforced based on sex, shaping individual self-concept from early childhood."
+        }
+      ],
+      "quiz": [
+        {
+          "id": 1,
+          "question": "How does the fundamental approach of sociology differ from that of psychology when studying human behavior?",
+          "options": [
+            "Psychology focuses on genetic determinism, while sociology focuses exclusively on animal behavior models.",
+            "Psychology looks inward at mental processes and emotional health, whereas sociology looks outward at social institutions and cultural patterns.",
+            "Sociology examines individual brain chemistry, while psychology studies large-scale economic systems.",
+            "Psychology studies adult behavior only, while sociology focuses exclusively on childhood socialization."
+          ],
+          "answer_index": 1,
+          "explanation": "Psychology focuses on internal mental development and emotional processing, while sociology examines external societal influences, cultural norms, and structural patterns."
+        },
+        {
+          "id": 2,
+          "question": "According to George Herbert Mead, what capability distinguishes the 'game stage' from the earlier 'play stage' in childhood socialization?",
+          "options": [
+            "Children can only imitate actions without understanding perspective.",
+            "Children understand abstract postconventional ethics and societal law.",
+            "Children learn to consider several roles simultaneously and understand how those roles interact.",
+            "Children develop a strong preference for gender-neutral play environments."
+          ],
+          "answer_index": 2,
+          "explanation": "In the game stage, children learn to coordinate multiple roles at once (e.g., understanding the distinct responsibilities of restaurant staff working together)."
+        },
+        {
+          "id": 3,
+          "question": "What key realization characterizes Lawrence Kohlberg's 'postconventional' stage of moral development?",
+          "options": [
+            "Morality is judged solely by direct sensory experiences and physical consequences.",
+            "Morality is determined by strict adherence to legal codes and social rules.",
+            "Morality is viewed in abstract terms, recognizing that legality and morality do not always align.",
+            "Morality is guided primarily by gender-neutral toys and early childhood play."
+          ],
+          "answer_index": 2,
+          "explanation": "At the postconventional level, individuals evaluate morality using abstract ethical principles (e.g., human rights) and recognize that legal laws may sometimes be morally unjust."
+        },
+        {
+          "id": 4,
+          "question": "What was Carol Gilligan's main critique of Lawrence Kohlberg's research on moral development?",
+          "options": [
+            "Kohlberg failed to include young children in his research sample.",
+            "Kohlberg's sample consisted only of male subjects, potentially introducing gender bias favoring a justice perspective.",
+            "Kohlberg relied too heavily on Harry Harlow's maternal deprivation experiments with rhesus monkeys.",
+            "Kohlberg assumed that moral development was completely finished by age six."
+          ],
+          "answer_index": 1,
+          "explanation": "Gilligan noted that Kohlberg tested only male subjects and treated their justice/rule orientation as superior, overlooking female socialization toward care and responsibility."
+        },
+        {
+          "id": 5,
+          "question": "Harry Harlow's research with infant rhesus monkeys demonstrated that emotional attachment and healthy self-development primarily rely on:",
+          "options": [
+            "Caloric intake provided by wire surrogate mothers.",
+            "Complete social isolation during early infant development.",
+            "Contact comfort and social interaction rather than mere food provision.",
+            "Strict enforcement of rule-based behavioral discipline."
+          ],
+          "answer_index": 2,
+          "explanation": "Harlow showed that infant monkeys sought comfort and attachment from soft cloth surrogate mothers over wire mothers supplying milk, proving the essential role of social contact comfort."
+        },
+        {
+          "id": 6,
+          "question": "Charles Horton Cooley's concept of the 'looking glass self' posits that an individual's self-concept is formed by:",
+          "options": [
+            "Innate genetic predispositions present at birth.",
+            "Their perception of how others view and judge them.",
+            "Their performance on standardized cognitive assessments.",
+            "Biological maturation through Freud's psychosexual stages."
+          ],
+          "answer_index": 1,
+          "explanation": "The looking glass self describes how individuals build self-understanding by imagining how they appear to others and interpreting others' reactions."
+        },
+        {
+          "id": 7,
+          "question": "How do modern sociologists explain the behavioral differences between males and females observed in studies like Gilligan's?",
+          "options": [
+            "They are biological imperatives hardwired at birth.",
+            "They result from gender socialization, which teaches societal norms and expectations based on sex.",
+            "They are solely caused by cognitive developmental delays in preconventional moral reasoning.",
+            "They reflect permanent psychosexual fixations formed during infancy."
+          ],
+          "answer_index": 1,
+          "explanation": "Sociologists attribute observed behavioral differences to gender socialization—the societal process of reinforcing distinct norms, roles, and expectations based on gender."
+        }
+      ]
+    };
+
+    // NAVIGATION SYSTEM
+    document.querySelectorAll('.tab-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.tab-panel').forEach(panel => {
+          panel.classList.remove('active');
+        });
+
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        document.getElementById(targetTab).classList.add('active');
+      });
+    });
+
+    // TABLE SEARCH FILTER
+    const matrixSearchInput = document.getElementById('matrixSearch');
+    if (matrixSearchInput) {
+      matrixSearchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const rows = document.querySelectorAll('#theoristTable tbody tr');
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
+
+    // ESSAY TOGGLE
+    function toggleAnswer(btn) {
+      const content = btn.nextElementSibling;
+      const isShow = content.classList.contains('show');
+      if (isShow) {
+        content.classList.remove('show');
+        btn.innerHTML = '<span>Show Model Answer</span> &#9660;';
+      } else {
+        content.classList.add('show');
+        btn.innerHTML = '<span>Hide Model Answer</span> &#9650;';
+      }
+    }
+
+    // FLASHCARD SYSTEM
+    let currentFlashIndex = 0;
+    const flashcards = coursewareData.flashcards;
+
+    function renderFlashcard() {
+      const cardData = flashcards[currentFlashIndex];
+      const cardElem = document.getElementById('flashcardElement');
+      cardElem.classList.remove('flipped');
+
+      setTimeout(() => {
+        document.getElementById('flashCategory').textContent = cardData.category;
+        document.getElementById('flashCounter').textContent = `Card ${currentFlashIndex + 1} of ${flashcards.length}`;
+        document.getElementById('flashTerm').textContent = cardData.term;
+        document.getElementById('flashDefinition').textContent = cardData.definition;
+      }, 150);
+    }
+
+    function flipFlashcard() {
+      const cardElem = document.getElementById('flashcardElement');
+      cardElem.classList.toggle('flipped');
+    }
+
+    function nextFlashcard() {
+      currentFlashIndex = (currentFlashIndex + 1) % flashcards.length;
+      renderFlashcard();
+    }
+
+    function prevFlashcard() {
+      currentFlashIndex = (currentFlashIndex - 1 + flashcards.length) % flashcards.length;
+      renderFlashcard();
+    }
+
+    // KEYBOARD NAVIGATION FOR FLASHCARDS
+    document.addEventListener('keydown', (e) => {
+      const activeTab = document.querySelector('.tab-panel.active').id;
+      if (activeTab === 'flashcards') {
+        if (e.code === 'Space') {
+          e.preventDefault();
+          flipFlashcard();
+        } else if (e.code === 'ArrowRight') {
+          nextFlashcard();
+        } else if (e.code === 'ArrowLeft') {
+          prevFlashcard();
+        }
+      }
+    });
+
+    // QUIZ SYSTEM
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+    const userAnswers = [];
+    const quizData = coursewareData.quiz;
+
+    function renderQuizQuestion() {
+      const quizContainer = document.getElementById('quizContent');
+      const progressFill = document.getElementById('quizProgressFill');
+
+      if (currentQuizIndex >= quizData.length) {
+        renderQuizResults();
+        return;
+      }
+
+      const q = quizData[currentQuizIndex];
+      const progressPercent = (currentQuizIndex / quizData.length) * 100;
+      progressFill.style.width = `${progressPercent}%`;
+
+      let optionsHTML = '';
+      q.options.forEach((opt, idx) => {
+        optionsHTML += `
+          <button class="option-btn" onclick="selectQuizOption(${idx})">
+            <strong style="width: 24px;">${String.fromCharCode(65 + idx)}.</strong>
+            <span>${opt}</span>
+          </button>
+        `;
+      });
+
+      quizContainer.innerHTML = `
+        <div class="quiz-question-card">
+          <div class="question-number">Question ${currentQuizIndex + 1} of ${quizData.length}</div>
+          <div class="question-text">${q.question}</div>
+          <div class="options-grid" id="optionsGrid">
+            ${optionsHTML}
+          </div>
+          <div id="explanationContainer"></div>
+          <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+            <button class="btn btn-primary" id="nextQuizBtn" style="display: none;" onclick="nextQuizQuestion()">
+              ${currentQuizIndex === quizData.length - 1 ? 'View Final Results' : 'Next Question &#8594;'}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectQuizOption(selectedIndex) {
+      const q = quizData[currentQuizIndex];
+      const optionsGrid = document.getElementById('optionsGrid');
+      const optionBtns = optionsGrid.querySelectorAll('.option-btn');
+      const expContainer = document.getElementById('explanationContainer');
+      const nextBtn = document.getElementById('nextQuizBtn');
+
+      // Disable further option clicks
+      optionBtns.forEach(btn => btn.disabled = true);
+
+      const isCorrect = selectedIndex === q.answer_index;
+      if (isCorrect) {
+        quizScore++;
+        optionBtns[selectedIndex].classList.add('correct');
+      } else {
+        optionBtns[selectedIndex].classList.add('incorrect');
+        optionBtns[q.answer_index].classList.add('correct');
+      }
+
+      userAnswers[currentQuizIndex] = {
+        selected: selectedIndex,
+        correct: isCorrect
+      };
+
+      expContainer.innerHTML = `
+        <div class="explanation-box ${isCorrect ? 'correct-bg' : 'incorrect-bg'}">
+          <strong style="color: ${isCorrect ? '#047857' : '#b91c1c'};">${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</strong>
+          <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #334155;">${q.explanation}</p>
+        </div>
+      `;
+
+      nextBtn.style.display = 'inline-flex';
+    }
+
+    function nextQuizQuestion() {
+      currentQuizIndex++;
+      renderQuizQuestion();
+    }
+
+    function renderQuizResults() {
+      const quizContainer = document.getElementById('quizContent');
+      const progressFill = document.getElementById('quizProgressFill');
+      progressFill.style.width = '100%';
+
+      const percentage = Math.round((quizScore / quizData.length) * 100);
+      let feedback = '';
+      if (percentage >= 85) {
+        feedback = 'Excellent mastery of psychological and sociological theories!';
+      } else if (percentage >= 70) {
+        feedback = 'Good performance! Review the flashcards and study guide matrix to polish your knowledge.';
+      } else {
+        feedback = 'Consider re-reading the textbook section and reviewing the flashcards before re-taking the quiz.';
+      }
+
+      quizContainer.innerHTML = `
+        <div class="quiz-results-card">
+          <h2>Quiz Completed!</h2>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">Your Final Score:</p>
+          <div class="score-badge">${quizScore} / ${quizData.length}</div>
+          <p style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">${percentage}% Mastery</p>
+          <p style="max-width: 500px; margin: 1rem auto 2rem auto; color: #475569;">${feedback}</p>
+          <button class="btn btn-primary" onclick="resetQuiz()">Re-take Quiz</button>
+        </div>
+      `;
+    }
+
+    function resetQuiz() {
+      currentQuizIndex = 0;
+      quizScore = 0;
+      userAnswers.length = 0;
+      renderQuizQuestion();
+    }
+
+    // INITIALIZE APPLICATION
+    window.addEventListener('DOMContentLoaded', () => {
+      renderFlashcard();
+      renderQuizQuestion();
+    });
+  </script>
+</body>
+</html>
